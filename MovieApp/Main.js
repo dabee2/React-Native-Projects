@@ -11,7 +11,9 @@ import React from "react";
 import { View,Text,StyleSheet,Image, } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+
 import Intro from "./Intro";
+import LoginNav from "./navigators/LoginNav";
 
 // 앱 전체 화면을 전환하는 최상위 StackNavigatort 객체 생성
 const RootStack= createStackNavigator()
@@ -21,9 +23,9 @@ const RootStack= createStackNavigator()
 export default Main= ()=>{
     return(
         <NavigationContainer>
-            <RootStack.Navigator>
+            <RootStack.Navigator screenOptions={{headerShown:false}}>
                 <RootStack.Screen name='Intro' component={Intro}></RootStack.Screen>
-
+                <RootStack.Screen name="LoginNav" component={LoginNav}></RootStack.Screen>
             </RootStack.Navigator>
         </NavigationContainer>
     )
